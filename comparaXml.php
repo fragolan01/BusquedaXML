@@ -30,7 +30,7 @@ if ($handle) {
         }  
         
         
-        // Imprimir los primeros 36 caracteres de la línea
+        // Imprimir los +rimeros 36 caracteres de la línea
         echo $primeros_36_caracteres . "\n";
         
 
@@ -44,7 +44,7 @@ if ($handle) {
 
     }
 
-$directorio = "XMLFEBRERO2024";
+$directorio = "XMLMARZO2024";
 
 // Obtener la lista de archivos en el directorio
 $archivos = scandir($directorio);
@@ -92,11 +92,9 @@ if ($file_handle) {
             echo "Error al insertar folios xml: " . $conn->error;
         }  
         
-        
         // Imprimir los primeros 36 caracteres de la línea
         echo $primeros_36_caracteres . "\n";
         
-
     }
 
     // Cerrar el archivo

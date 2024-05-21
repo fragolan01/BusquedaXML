@@ -1,8 +1,7 @@
 <?php
 
-// conecta a bd
+// Conexión a la base de datos
 require_once('conexion.php');
-
 
 // Consulta para obtener el número de registros en folios_descarga
 $sql_count_fd = "SELECT COUNT(*) AS count_fd FROM folios_descarga";
@@ -20,7 +19,6 @@ $count_xml = $row_count_xml['count_xml'];
 echo "Número de registros en folios_descarga: " . $count_fd . "\n";
 echo "Número de registros en xml: " . $count_xml . "\n";
 
-
 // Consulta para obtener los registros faltantes en xml
 $sql_faltantes = "SELECT xml.*
                   FROM xml
@@ -31,12 +29,17 @@ $result_faltantes = $conn->query($sql_faltantes);
 
 // Comprobar si hay resultados
 if ($result_faltantes->num_rows > 0) {
-    // Iterar sobre los resultados y mostrarlos en la consola
+    // Abre o crea el archivo CSV
+    $csv_file = fopen('resultados_faltantes.csv', 'w');
+    // Escribe el encabezado del CSV
+    // fputcsv($csv_file, array('ID', 'Nombre'));
+    // Itera sobre los resultados y escribe cada fila en el CSV
     while ($row = $result_faltantes->fetch_assoc()) {
-        // Imprimir cada fila
-        echo "ID: " . $row["id"] . ", Nombre: " . $row["nombre"] ."\n";
-        // Puedes añadir más columnas según sea necesario
+        fputcsv($csv_file, $row);
     }
+    // Cierra el archivo CSV
+    fclose($csv_file);
+    echo "Los resultados de los registros faltantes se han guardado en 'resultados_faltantes.csv'.";
 } else {
     echo "No se encontraron registros faltantes en xml.";
 }
