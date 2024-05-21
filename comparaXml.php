@@ -1,6 +1,6 @@
 <?php
 
-// conecta a bd
+// conecta a bd bd
 require_once ('conexion.php');
 
 // Ruta del archivo de texto
