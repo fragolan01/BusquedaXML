@@ -1,7 +1,11 @@
 # all file xml source #
 ###################
 *.xml
+<<<<<<< HEAD
 *.txt
 *.zip
 
 XMLABRIL2024
+=======
+XMLABRIL2024
+>>>>>>> 33e345214db0ba6e2d3ae8f230fc1a8a7ee4b8cf
