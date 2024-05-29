@@ -44,7 +44,7 @@ if ($handle) {
 
     }
 
-$directorio = "XMLMARZO2024";
+$directorio = "XMLMAYO2024";
 
 // Obtener la lista de archivos en el directorio
 $archivos = scandir($directorio);
