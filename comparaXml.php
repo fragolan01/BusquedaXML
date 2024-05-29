@@ -3,6 +3,8 @@
 // conecta a bd bd
 require_once ('conexion.php');
 
+// Unos cuantos cambios
+
 // Ruta del archivo de texto
 $archivo = "cfdi/todosLosXML.txt";
 
